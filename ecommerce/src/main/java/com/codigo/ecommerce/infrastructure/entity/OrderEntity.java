@@ -13,6 +13,7 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDateTime dateCreated;
+   /* private Boolean isActive = true;*/
     @ManyToOne
     private UserEntity user;
 

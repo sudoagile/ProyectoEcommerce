@@ -12,4 +12,5 @@ public class OrderProductEntity {
     @EmbeddedId
     private  OrderProductPK pk;
     private Integer quantity;
+ /*   private Boolean isActive = true;*/
 }

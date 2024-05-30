@@ -25,6 +25,7 @@ public class ProductEntity {
 
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
+    /*private Boolean isActive = true;*/
 
     @ManyToOne
     private UserEntity userEntity;

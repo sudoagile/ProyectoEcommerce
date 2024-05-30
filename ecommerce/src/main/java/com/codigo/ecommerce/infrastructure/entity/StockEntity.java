@@ -22,6 +22,7 @@ public class StockEntity {
     private Integer unitOut;
     private String description;
     private Integer balance;
+   /* private Boolean isActive = true;*/
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private ProductEntity productEntity;
