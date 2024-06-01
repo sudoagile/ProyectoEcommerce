@@ -28,16 +28,20 @@ public class LoginController {
 
     @GetMapping("/access")
     public String access(RedirectAttributes attributes, HttpSession httpSession){
-        User user = loginService.getUser( Integer.parseInt( httpSession.getAttribute("iduser").toString() ) ) ;
-        attributes.addFlashAttribute("id", httpSession.getAttribute("iduser").toString() );
-        if(loginService.existUser(user.getEmail())){
-           if (loginService.getUserType(user.getEmail()).name().equals("ADMIN")){
-               return "redirect:/admin";
-           }else{
-               return "redirect:/home";
-           }
+        if (httpSession.getAttribute("iduser") != null) {
+            int userId = Integer.parseInt(httpSession.getAttribute("iduser").toString());
+            User user = loginService.getUser(userId);
+            attributes.addFlashAttribute("id", httpSession.getAttribute("iduser").toString());
+            if (loginService.existUser(user.getEmail())) {
+                if (loginService.getUserType(user.getEmail()).name().equals("ADMIN")) {
+                    return "redirect:/admin";
+                } else {
+                    return "redirect:/home";
+                }
+            }
         }
         return "redirect:/home";
     }
+
 
 }

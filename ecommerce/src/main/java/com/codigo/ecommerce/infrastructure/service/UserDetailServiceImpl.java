@@ -26,10 +26,13 @@ public class UserDetailServiceImpl implements UserDetailsService {
         if (idUser != USER_NOT_FOUND){
             User user = loginService.getuser(username);
             httpSession.setAttribute("iduser", user.getId());
-            return org.springframework.security.core.userdetails.User.builder().username(user.getUsername()).password(user.getPassword()).roles(user.getUserType().name()).build();
-        }else{
-            throw  new UsernameNotFoundException("Usuario no encontrado ");
+            return org.springframework.security.core.userdetails.User.builder()
+                    .username(user.getUsername())
+                    .password(user.getPassword())
+                    .roles(user.getUserType().name())
+                    .build();
+        } else {
+            throw new UsernameNotFoundException("Usuario no encontrado");
         }
-
     }
 }
