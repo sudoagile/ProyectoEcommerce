@@ -20,6 +20,18 @@ public class User {
     private String password;
     private UserType userType;
     private LocalDateTime dateCreated;
+    private String dni;
 
 
+    public User(Integer id, String username, String email, String address, String cellphone, String password, UserType userType, LocalDateTime dateCreated, String dni) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.address = address;
+        this.cellphone = cellphone;
+        this.password = password;
+        this.userType = userType;
+        this.dateCreated = dateCreated;
+        this.dni = dni;
+    }
 }

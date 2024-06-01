@@ -26,5 +26,5 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private UserType userType;
     private LocalDateTime dateCreated;
-    /*private Boolean isActive = true; */ // Nuevo campo para delete lógico
+    private Boolean isActive = true;  // Nuevo campo para delete lógico
 }

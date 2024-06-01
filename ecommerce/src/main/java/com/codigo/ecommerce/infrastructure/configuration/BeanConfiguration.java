@@ -2,6 +2,7 @@ package com.codigo.ecommerce.infrastructure.configuration;
 
 import com.codigo.ecommerce.application.repository.*;
 import com.codigo.ecommerce.application.service.*;
+import com.codigo.ecommerce.client.ReniecClient;
 import com.codigo.ecommerce.domain.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -51,8 +52,8 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public RegistrationService registrationService(UserService userService, PasswordEncoder passwordEncoder){
-        return  new RegistrationService(userService, passwordEncoder);
+    public RegistrationService registrationService(UserService userService, PasswordEncoder passwordEncoder, ReniecClient reniecClient){
+        return  new RegistrationService(userService, passwordEncoder, reniecClient);
     }
 
     @Bean

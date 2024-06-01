@@ -65,16 +65,10 @@
 
 	<form th:action="@{/register}" method="post" th:object="${userDto}">
       <div class="form-group">
-        <label for="firstName">Nombre:</label> <input type="text"
-          class="form-control" id="firstName" name="firstName"
-          placeholder="Ingrese su nombre" autocomplete="off">
-        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:errorclass="error"></p>
-      </div>
+        <label for="dni">DNI:</label>
+        <input type="text" class="form-control" id="dni" name="dni" placeholder="Ingrese su DNI" autocomplete="off">
+        <p th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}" th:errorclass="error"></p>
 
-      <div class="form-group">
-        <label for="lastName">Apellido:</label> <input type="text" class="form-control" id="lastName" name="lastName"
-                                                      placeholder="Ingrese su apellido" autocomplete="off">
-        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:errorclass="error"></p>
       </div>
 
       <div class="form-group">
