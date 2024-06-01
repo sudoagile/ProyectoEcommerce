@@ -176,9 +176,9 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.11.0.3922</version>
 
-             <!--   <configuration>
+                <configuration>
                     <debug>true</debug>
-                </configuration>-->
+                </configuration>
 
             </plugin>
         </plugins>
